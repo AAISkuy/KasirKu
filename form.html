@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KasirKu - Form Tambah Produk</title>
     <link rel="stylesheet" href="style.css" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
@@ -184,7 +191,7 @@
             const stok_awal_produk = parseInt(stok_awal.value);
             const batas_min_produk = parseInt(batas_min.value);
 
-            if (nm_produk === "" || kategori_produk === "" ) {
+            if (nm_produk === "" || kategori_produk === "") {
               validasi("Nama produk tidak boleh kosong", "error");
               return;
             }
@@ -197,7 +204,7 @@
               harga_beli_produk,
               harga_jual_produk,
               stok_awal_produk,
-              batas_min_produk
+              batas_min_produk,
             };
 
             const dataTersimpan =
