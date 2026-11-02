@@ -7,7 +7,7 @@ const produk = [
 ];
 
 function saringStokMenipis(daftar) {
-  return daftar.filter((p) => p.stok < 5);
+  return daftar.filter((p) => p.stok < 2);
 }
 
 const hasil = saringStokMenipis(produk);
