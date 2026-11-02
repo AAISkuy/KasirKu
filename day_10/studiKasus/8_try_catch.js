@@ -1,13 +1,13 @@
 function bacaHarga(teks) {
   const harga = Number(teks);
   if (teks.trim() === "" || Number.isNaN(harga)) {
-    throw new Error("Harga harus berupa angka, mis. 2500");
+    throw new Error("Harga harus berupa angka, mis. 122500");
   }
   return harga;
 }
 
 
-for (const isian of ["abc", "", "2500"]) {
+for (const isian of ["abc", "", "122500"]) {
   try {
     console.log("✔ Harga:", bacaHarga(isian));
   } catch (err) {
