@@ -10,6 +10,7 @@ export const penggunaAwal: Pengguna[] = [
     email: "Rentifa@gmail.com",
     password: "AkuTifa111",
   },
+  
   {
     nama: "Budi",
     email: "budi@gmail.com",

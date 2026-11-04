@@ -2,12 +2,17 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import Toast from "../components/Toast";
 import { useNavigate } from "react-router-dom";
+import type { Pengguna } from "../data/Pengguna";
+
+type Props = {
+  daftarPengguna: Pengguna[];
+};
 
 type FormErrors = { email?: string; password?: string };
 type InfoToast = { teks: string; jenis: "sukses" | "gagal" } | null;
 const AKUN_ADMIN = { email: "Rentifa@gmail.com", password: "Akutifa111" };
 
-export default function HalamanLogin() {
+export default function HalamanLogin({ daftarPengguna }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pesan, setPesan] = useState("");
@@ -55,6 +60,7 @@ export default function HalamanLogin() {
   return (
     <form onSubmit={handleSubmit} className="form">
       <h2>Rentifa</h2>
+      <p>Total pengguna: {daftarPengguna.length}</p>
       <small>Reliable Rides, Easy Rentals</small>
       <h2>Selamat Datang</h2>
       <p>Masuk ke akun Anda untuk mengelola sewa dan reservasi</p>

@@ -2,8 +2,12 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import Toast from "../components/Toast";
 import { useNavigate } from "react-router-dom";
+import type { Pengguna } from "../data/Pengguna";
 
-
+type Props = {
+  daftarPengguna: Pengguna[];
+  onDaftar: (baru: Pengguna) => void;
+};
 
 type FormErrors = { 
     email?: string; 
@@ -16,7 +20,7 @@ type FormErrors = {
 type InfoToast = { 
     teks: string; jenis: "sukses" | "gagal" } | null;
 
-export default function HalamanRegister() {
+export default function HalamanRegister({ daftarPengguna, onDaftar }: Props) {
 
   const [nama, setNama] = useState("");
   const [noHP, setNohp] = useState("");
@@ -29,6 +33,11 @@ export default function HalamanRegister() {
   const [showPassword, setShowPassword] = useState(false);
   const [toast, setToast] = useState<InfoToast | null>(null);
   const navigate = useNavigate();
+  const sudahAda = daftarPengguna.some(
+  (p) => p.nama.toLowerCase() === nama.trim().toLowerCase());
+    if (sudahAda) {
+      newErrors.nama = "Nama sudah terdaftar";
+    }
 
   function tampilkanToast(teks: string, jenis: "sukses" | "gagal") {
     setToast({ teks, jenis });
@@ -53,6 +62,7 @@ export default function HalamanRegister() {
     if (ulangiPassword === "") errs.ulangi = "Ulangi password wajib diisi";
     else if (ulangiPassword !== password) errs.ulangi = "Password tidak sama";
     if (!setuju) errs.setuju = "Wajib centang setuju";
+    
 
     return errs;
   }

@@ -35,6 +35,11 @@ input.error {
   to   { transform: translateX(0);    opacity: 1; }
 }
 
-.toast { position: fixed; top: 20px; right: 20px;
-  animation: meluncur 0.3s ease-out; }
+.toast { 
+  position: fixed; 
+  top: 20px; 
+  right: 20px;
+  animation: meluncur 0.3s ease-out;
+  
+}
 
