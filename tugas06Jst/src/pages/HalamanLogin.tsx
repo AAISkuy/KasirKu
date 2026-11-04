@@ -60,7 +60,7 @@ export default function HalamanLogin({ daftarPengguna }: Props) {
   return (
     <form onSubmit={handleSubmit} className="form">
       <h2>Rentifa</h2>
-      <p>Total pengguna: {daftarPengguna.length}</p>
+      {/* <p>Total pengguna: {daftarPengguna.length}</p> */}
       <small>Reliable Rides, Easy Rentals</small>
       <h2>Selamat Datang</h2>
       <p>Masuk ke akun Anda untuk mengelola sewa dan reservasi</p>
